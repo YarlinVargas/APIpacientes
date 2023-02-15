@@ -15,6 +15,7 @@ namespace PacientesApi.Controller
             await function.InsertarPaciente(paciente);
         }
         [HttpPut]
+        [Route("{id}")]
         public async Task<ActionResult> EditarPaciente(int id,[FromBody] PacienteModel paciente)
         {
             var function = new PacienteData();
@@ -24,6 +25,7 @@ namespace PacientesApi.Controller
             return NoContent();
         }
         [HttpDelete]
+        [Route("{id}")]
         public async Task<ActionResult> EliminarPaciente(int id)
         {
             var paciente = new PacienteModel();
